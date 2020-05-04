@@ -1,0 +1,27 @@
+.prepend-desc {
+  font-weight: 800;
+  width: 100px;
+}
+
+.qty {
+  width: 50%;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+.margins-gutters {
+  display: flex;
+  width: auto;
+}
+
+.margins-gutters .prepend-desc {
+  width: 70px;
+  font-size: 12px;
+}
+
+.results {
+  align-items: center;
+}

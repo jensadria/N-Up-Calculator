@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>N-Up Calculator</title>
+    <style>
+      #results,
+      .alert {
+        display:none;
+
+      }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="card card-body text-center mt-5">
+          <h1>N-Up Calculator</h1>
+          <p>
+            This will calculate the amount of prints you can get on an SRA3
+            sheet(450mm x 320mm).
+          </p>
+          <p>
+            Enter the height and width of your prints and the amount of prints
+            will be calculated for you
+          </p>
+        </div>
+      </div>
+
+      <!-- INPUTS AND RESULTS -->
+      <div class="row d-flex justify-content-between id="calculations">
+        <div class="col-md-6 card card-body mt-5">
+          <!-- Quantity Input -->
+          <form id="qty-size">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text prepend-desc">Qty</span>
+                </div>
+                <input
+                  type="number"
+                  min="1"
+                  class="form-control"
+                  placeholder="Width in mm"
+                  id="qty"
+                />
+              </div>
+            </div>
+            <!-- Width Input -->
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text prepend-desc">Width</span>
+                </div>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Width in mm"
+                  id="width"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">mm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Height Input -->
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text prepend-desc">Height</span>
+                </div>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Width in mm"
+                  id="height"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">mm</span>
+                </div>
+              </div>
+            </div>
+
+              <!-- Margins & Gutters -->
+              <div class="form-group margins-gutters">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text prepend-desc">Gutters</span>
+                  </div>
+                  <input
+                    value="5"
+                    type="number"
+                    class="form-control"
+                    placeholder="Width in mm"
+                    id="gutters"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">mm</span>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text prepend-desc">Margins</span>
+                  </div>
+                  <input
+                    value="5"
+                    type="number"
+                    class="form-control"
+                    placeholder="Width in mm"
+                    id="margins"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">mm</span>
+                  </div>
+                </div>
+              </div>
+            <!-- Calculate Button -->
+          
+          <div class="form-group">
+            <input
+              type="submit"
+              value="Calculate"
+              class="btn btn-dark btn-block"
+            />
+          </form>
+          </div>
+        </div>
+        
+
+        <div class="col-md-6 card card-body mt-5">
+          <div id="results"></div>
+          <div class="mb-5 mx-auto mt-5">
+            <h1><span class="flex-wrap center" id="sheets"></span></h1>
+          </div>
+          <div class="mb-5 mx-auto">
+            <h4><span class="flex-wrap center" id="n-up"></span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="row alert alert-danger mt-3">Please check your numbers</div>
+
+      </div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
